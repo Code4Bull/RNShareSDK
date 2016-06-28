@@ -1,0 +1,67 @@
+{
+  "name": "fbjs-scripts",
+  "version": "0.7.1",
+  "description": "A bundle of helpful scripts used in projects consuming fbjs.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facebook/fbjs.git"
+  },
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "babel-core": "^6.7.2",
+    "babel-preset-fbjs": "^1.0.0",
+    "core-js": "^1.0.0",
+    "cross-spawn": "^3.0.1",
+    "gulp-util": "^3.0.4",
+    "object-assign": "^4.0.1",
+    "semver": "^5.1.0",
+    "through2": "^2.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/facebook/fbjs/issues"
+  },
+  "homepage": "https://github.com/facebook/fbjs#readme",
+  "_id": "fbjs-scripts@0.7.1",
+  "scripts": {},
+  "_shasum": "4f115e218e243e3addbf0eddaac1e3c62f703fac",
+  "_from": "fbjs-scripts@>=0.7.0 <0.8.0",
+  "_npmVersion": "2.15.1",
+  "_nodeVersion": "4.4.3",
+  "_npmUser": {
+    "name": "zpao",
+    "email": "paul@oshannessy.com"
+  },
+  "maintainers": [
+    {
+      "name": "cpojer",
+      "email": "christoph.pojer@gmail.com"
+    },
+    {
+      "name": "fb",
+      "email": "opensource+npm@fb.com"
+    },
+    {
+      "name": "tadeuzagallo",
+      "email": "tadeuzagallo@gmail.com"
+    },
+    {
+      "name": "vjeux",
+      "email": "vjeuxx@gmail.com"
+    },
+    {
+      "name": "zpao",
+      "email": "paul@oshannessy.com"
+    }
+  ],
+  "dist": {
+    "shasum": "4f115e218e243e3addbf0eddaac1e3c62f703fac",
+    "tarball": "https://registry.npmjs.org/fbjs-scripts/-/fbjs-scripts-0.7.1.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/fbjs-scripts-0.7.1.tgz_1464215645130_0.08450402552261949"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/fbjs-scripts/-/fbjs-scripts-0.7.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

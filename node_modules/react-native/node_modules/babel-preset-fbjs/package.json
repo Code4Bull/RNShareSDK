@@ -1,0 +1,91 @@
+{
+  "name": "babel-preset-fbjs",
+  "version": "2.0.0",
+  "description": "Babel preset for Facebook projects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facebook/fbjs.git"
+  },
+  "license": "BSD-3-Clause",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest"
+  },
+  "dependencies": {
+    "babel-plugin-check-es2015-constants": "^6.8.0",
+    "babel-plugin-syntax-class-properties": "^6.8.0",
+    "babel-plugin-syntax-flow": "^6.8.0",
+    "babel-plugin-syntax-jsx": "^6.8.0",
+    "babel-plugin-syntax-object-rest-spread": "^6.8.0",
+    "babel-plugin-syntax-trailing-function-commas": "^6.8.0",
+    "babel-plugin-transform-class-properties": "^6.8.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
+    "babel-plugin-transform-es2015-block-scoped-functions": "^6.8.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.8.0",
+    "babel-plugin-transform-es2015-classes": "^6.8.0",
+    "babel-plugin-transform-es2015-computed-properties": "^6.8.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.8.0",
+    "babel-plugin-transform-es2015-for-of": "^6.8.0",
+    "babel-plugin-transform-es2015-function-name": "^6.8.0",
+    "babel-plugin-transform-es2015-literals": "^6.8.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.8.0",
+    "babel-plugin-transform-es2015-object-super": "^6.8.0",
+    "babel-plugin-transform-es2015-parameters": "^6.8.0",
+    "babel-plugin-transform-es2015-shorthand-properties": "^6.8.0",
+    "babel-plugin-transform-es2015-spread": "^6.8.0",
+    "babel-plugin-transform-es2015-template-literals": "^6.8.0",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.8.0",
+    "babel-plugin-transform-es3-property-literals": "^6.8.0",
+    "babel-plugin-transform-flow-strip-types": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-plugin-transform-react-display-name": "^6.8.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.8.0",
+    "jest-cli": "^12.0.2"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "persistModuleRegistryBetweenSpecs": true,
+    "rootDir": "",
+    "testPathDirs": [
+      "<rootDir>"
+    ],
+    "unmockedModulePathPatterns": [
+      ""
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/facebook/fbjs/issues"
+  },
+  "homepage": "https://github.com/facebook/fbjs#readme",
+  "_id": "babel-preset-fbjs@2.0.0",
+  "_shasum": "8042946d4ba2612bf52035b19206b0358eae7b46",
+  "_from": "babel-preset-fbjs@>=2.0.0 <3.0.0",
+  "_npmVersion": "2.15.1",
+  "_nodeVersion": "4.4.3",
+  "_npmUser": {
+    "name": "zpao",
+    "email": "paul@oshannessy.com"
+  },
+  "maintainers": [
+    {
+      "name": "zpao",
+      "email": "paul@oshannessy.com"
+    }
+  ],
+  "dist": {
+    "shasum": "8042946d4ba2612bf52035b19206b0358eae7b46",
+    "tarball": "https://registry.npmjs.org/babel-preset-fbjs/-/babel-preset-fbjs-2.0.0.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/babel-preset-fbjs-2.0.0.tgz_1464215783033_0.09449096908792853"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/babel-preset-fbjs/-/babel-preset-fbjs-2.0.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
