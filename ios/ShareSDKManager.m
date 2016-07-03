@@ -121,12 +121,12 @@ RCT_EXPORT_METHOD(share:(NSInteger)platformType shareParams:(NSDictionary *)shar
   [ShareSDK share:(SSDKPlatformType)platformType parameters:ShareContentDict onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
       switch (state) {
         case SSDKResponseStateFail:
-          // TODO callback 第二个参数为数组，将返回值全部都丢在这个数组中
-          callback(@[[error description],@"testData"]);
+          callback(@[[error description]]);
         break;
+        
         case SSDKResponseStateSuccess:
-          NSLog(@"分享成功");
-          break;
+          callback(@[[NSNull null],userData]);
+        break;
       default:
         break;
     }
@@ -134,32 +134,94 @@ RCT_EXPORT_METHOD(share:(NSInteger)platformType shareParams:(NSDictionary *)shar
 }
 
 #pragma mark ActionSheet分享
-RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location)
+RCT_EXPORT_METHOD(showShareActionSheet:(NSArray*)items shareParams:(NSDictionary *)shareParams callback:(RCTResponseSenderBlock)callback)
 {
-  RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
-}
-#pragma mark 弹出编辑框分享
+  NSMutableDictionary * ShareContentDict = [NSMutableDictionary new];
+  
+  [ShareContentDict SSDKSetupShareParamsByText:[shareParams objectForKey:@"Text"]
+                                        images:nil
+                                           url:[NSURL URLWithString:[shareParams objectForKey:@"url"]]
+                                         title:[shareParams objectForKey:@"title"]
+                                          type:(SSDKContentType)[[shareParams objectForKey:@"type"] doubleValue]];
+  
+  // 主线程执行：
+  dispatch_async(dispatch_get_main_queue(), ^{
+    // TODO items 的数据处理
+    [ShareSDK showShareActionSheet:nil items:nil shareParams:ShareContentDict onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
+        switch (state) {
+        case SSDKResponseStateFail:
+          callback(@[[error description]]);
+        break;
+          
+        case SSDKResponseStateSuccess:
+            // 返回内容实体对象
+          callback(@[[NSNull null],[contentEntity rawData]]);
+        break;
+        
+        default:
+          break;
+      }
 
+    }];
+  });
+
+}
+
+#pragma mark 弹出编辑框分享
+RCT_EXPORT_METHOD(showShareEditor:(NSInteger)platformType shareParams:(NSDictionary *)shareParams callback:(RCTResponseSenderBlock)callback)
+{
+  NSMutableDictionary * ShareContentDict = [NSMutableDictionary new];
+  
+  [ShareContentDict SSDKSetupShareParamsByText:[shareParams objectForKey:@"Text"]
+                                        images:nil
+                                           url:[NSURL URLWithString:[shareParams objectForKey:@"url"]]
+                                         title:[shareParams objectForKey:@"title"]
+                                          type:(SSDKContentType)[[shareParams objectForKey:@"type"] doubleValue]];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [ShareSDK showShareEditor:(SSDKPlatformType)platformType otherPlatformTypes:nil shareParams:ShareContentDict onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
+      switch (state) {
+        case SSDKResponseStateFail:
+          callback(@[[error description]]);
+          break;
+          
+        case SSDKResponseStateSuccess:
+          callback(@[[NSNull null],[contentEntity rawData]]);
+          break;
+          
+        default:
+          break;
+      }
+
+    }];
+  });
+}
 
 
 
 #pragma mark 授权
-//[ShareSDK authorize:SSDKPlatformTypeSinaWeibo settings:nil onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
-//  switch (state) {
-//    case SSDKResponseStateFail:
-//      // TODO callback 第二个参数为数组，将返回值全部都丢在这个数组中
-//      callback(@[[error description]]);
-//      break;
-//      
-//    case SSDKResponseStateSuccess:
-//      callback(@[[NSNull null],[user rawData]]);
-//      break;
-//      
-//    default:
-//      break;
-//  }
-//}];
-#pragma mark 取消授权
+RCT_EXPORT_METHOD(authorize:(NSInteger)platformType callback:(RCTResponseSenderBlock)callback)
+{
+  [ShareSDK authorize:(SSDKPlatformType)platformType settings:nil onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
+    switch (state) {
+      case SSDKResponseStateFail:
+        // TODO callback 第二个参数为数组，将返回值全部都丢在这个数组中
+        callback(@[[error description]]);
+        break;
+  
+      case SSDKResponseStateSuccess:
+        callback(@[[NSNull null],[user rawData]]);
+        break;
+  
+      default:
+        break;
+    }
+  }];
+}
 
+#pragma mark 取消授权
+RCT_EXPORT_METHOD(cancelAuthorize:(NSInteger)platformType)
+{
+  [ShareSDK cancelAuthorize:(SSDKPlatformType)platformType];
+}
 
 @end
