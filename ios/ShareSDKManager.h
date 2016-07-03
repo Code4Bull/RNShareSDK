@@ -11,4 +11,8 @@
 
 @interface ShareSDKManager : NSObject <RCTBridgeModule>
 
+
+
+
+
 @end
