@@ -13,11 +13,11 @@
 #import <ShareSDKUI/ShareSDKUI.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
 
-#define IMPORT_SINA_WEIBO_LIB               //导入新浪微博库，如果不需要新浪微博客户端分享可以注释此行
+//#define IMPORT_SINA_WEIBO_LIB               //导入新浪微博库，如果不需要新浪微博客户端分享可以注释此行
 //#define IMPORT_QZONE_QQ_LIB                 //导入腾讯开发平台库，如果不需要QQ空间分享、SSO或者QQ好友分享可以注释此行
 #define IMPORT_RENREN_LIB                   //导入人人库，如果不需要人人SSO，可以注释此行
-#define IMPORT_WECHAT_LIB                   //导入微信库，如果不需要微信分享可以注释此行
-#define IMPORT_ALIPAY_LIB                   //导入支付宝分享库，如果不需要支付宝分享可以注释此行
+//#define IMPORT_WECHAT_LIB                   //导入微信库，如果不需要微信分享可以注释此行
+//#define IMPORT_ALIPAY_LIB                   //导入支付宝分享库，如果不需要支付宝分享可以注释此行
 #define IMPORT_KAKAO_LIB                    //导入Kakao库，如果不需要Kakao分享可以注释此行
 
 #ifdef IMPORT_SINA_WEIBO_LIB
@@ -54,6 +54,7 @@ RCT_EXPORT_MODULE();
 #pragma mark 初始化
 RCT_EXPORT_METHOD(registerApp:(NSString *)AppKey activePlatforms:(NSArray *)activePlatforms TotalPlatforms : (NSDictionary *)TotalPlatforms)
 {
+  NSLog(@"%@",activePlatforms);
   [ShareSDK registerApp:AppKey activePlatforms:activePlatforms onImport:^(SSDKPlatformType platformType) {
     switch (platformType)
     {
@@ -161,7 +162,6 @@ RCT_EXPORT_METHOD(showShareActionSheet:(NSArray*)items shareParams:(NSDictionary
         default:
           break;
       }
-
     }];
   });
 
@@ -177,7 +177,9 @@ RCT_EXPORT_METHOD(showShareEditor:(NSInteger)platformType shareParams:(NSDiction
                                            url:[NSURL URLWithString:[shareParams objectForKey:@"url"]]
                                          title:[shareParams objectForKey:@"title"]
                                           type:(SSDKContentType)[[shareParams objectForKey:@"type"] doubleValue]];
+  
   dispatch_async(dispatch_get_main_queue(), ^{
+    
     [ShareSDK showShareEditor:(SSDKPlatformType)platformType otherPlatformTypes:nil shareParams:ShareContentDict onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
       switch (state) {
         case SSDKResponseStateFail:
@@ -191,7 +193,6 @@ RCT_EXPORT_METHOD(showShareEditor:(NSInteger)platformType shareParams:(NSDiction
         default:
           break;
       }
-
     }];
   });
 }

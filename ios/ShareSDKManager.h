@@ -10,9 +10,4 @@
 #import "RCTBridgeModule.h"
 
 @interface ShareSDKManager : NSObject <RCTBridgeModule>
-
-
-
-
-
 @end
