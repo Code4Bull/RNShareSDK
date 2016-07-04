@@ -18,7 +18,7 @@ var ShareSDKIOS = require('./ShareSDKIOS')
 var ShareSDKTypeDefine = require('./ShareSDKTypeDefine')
 var ShareSDKManager = require('react-native').NativeModules.ShareSDKManager;
 
-// 传入初始化的KEY
+// 传入初始化的KEY,在ShreSDKIOS中配置好的要分享的平台,和各个平台的初始化信息传入registerApp方法中
 // iosv1001 为测试key,随时有可能删除,请到 http://www.mob.com 获取
 ShareSDKManager.registerApp("iosv1001",ShareSDKIOS.activePlatforms,ShareSDKIOS.TotalPlatforms);
 // -----------------------------------------------------------------------------

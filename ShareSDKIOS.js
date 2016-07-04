@@ -6,7 +6,11 @@ var ShareSDKIOS = {
     // 将需要分享的平台标记放入一个数组中
     activePlatforms: [
         ShareSDKTypeDefine.PlatformType.SinaWeibo,
-        ShareSDKTypeDefine.PlatformType.TencentWeibo
+        ShareSDKTypeDefine.PlatformType.TencentWeibo,
+        ShareSDKTypeDefine.PlatformType.Wechat,
+        ShareSDKTypeDefine.PlatformType.QQ,
+        ShareSDKTypeDefine.PlatformType.Twitter,
+        ShareSDKTypeDefine.PlatformType.Facebook
     ],
 
     // 构造分享参数
