@@ -1,5 +1,5 @@
-## ShareSDK-iOS (v3.x) for Cocos2d-x 
-* Cocos2d-x开发者方便的集成ShareSDK分享和授权功能。
+## ShareSDK-iOS (v3.x) for React-Native 
+* JS 开发者方便的集成ShareSDK分享和授权功能。
 
 ## 目录
 * Getting started
@@ -13,17 +13,17 @@
 
 
 ## <a id="Download"></a>1、新建项目并下载 ShareSDK
-* 1、Cocos2d-x项目环境搭建，不会的童鞋自行面壁哈: [网页链接](http://www.jianshu.com/p/676f2e9096d4).
-* 2、ShareSDK iOS版本的 Cocos2d-x 插件是在ShareSDK iOS版本基础上对接口做个C++接口的封装，是依赖ShareSDK for iOS的。所以下载ShareSDK就包含了以下2部分，下载下来的文件目录截图如下：
+* 1、React-Native 项目环境搭建，不会的童鞋自行面壁哈: [网页链接](http://reactnative.cn/docs/0.27/getting-started.html#content).
+* 2、ShareSDK iOS版本的 RN 插件是在ShareSDK iOS版本基础上对原生模块的接口做导出供给JS端使用，是依赖ShareSDK for iOS的。是依赖ShareSDK for iOS的。所以下载本示例DEMO就包含了以下2部分，下载下来的文件目录截图如下：
 
-  （1）ShareSDK iOS版本的下载：[网页链接](http://www.mob.com/#/downloadDetail/ShareSDK/ios)
+  （1）ShareSDK iOS 版本的下载：[网页链接](http://www.mob.com/#/downloadDetail/ShareSDK/ios)
   
-  （2）Cocos2d-x插件的下载: ：[网页链接](https://github.com/MobClub/New-C2DX-For-ShareSDK)
-（包含demo，需要的是C2DXShareSDK）
+  （2）React-Native 插件的下载: ：[网页链接](https://github.com/kengsir/RNShareSDK)
+（包含demo，需要的是ShareSDKManager.h / ShareSDKManager.m / ShareSDKIOS.js[暂名]）
 
-![初始化](http://wiki.mob.com/wp-content/uploads/2015/12/tmp7f2f3116.png)
+![初始化](http://ww2.sinaimg.cn/mw690/6f5f9fe7gw1f5ji9gh9f1j20w20l4acp.jpg)
 
-* 将以上2个红色方框内的文件拖到新建的Cocos2d-x项目中。
+* 将以上文件ShareSDKManager.h / ShareSDKManager.m / ShareSDK 拖到新建的 RN 项目中的 ios 目录下，将 ShareSDKIOS.js 拖入 RN 项目中。
 
 
 ## <a id="init"></a> 2、初始化ShareSDK并设置社交平台
@@ -32,7 +32,7 @@
  * 1、下载的 ShareSDK 文件夹拖拽进项目
    
   
-  ![img](http://wiki.mob.com/wp-content/uploads/2015/11/ShareSDK2.jpg)
+  ![img](http://ww4.sinaimg.cn/mw690/6f5f9fe7gw1f5jioidriej21em0mi0x5.jpg)
   注意：请务必在上述步骤中选择“Create groups for any added folders”单选按钮组。如果你选择“Create folder references for any added folders”，一个蓝色的文件夹引用将被添加到项目并且将无法找到它的资源。
 
 
@@ -89,11 +89,11 @@
 
 * 3、各个社交平台需要的配置（url schemes 等）可以参考文档中的可选配置项：[网页链接](http://wiki.mob.com/ios%E7%AE%80%E6%B4%81%E7%89%88%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90/)
 
-## Cocos2d-x 部分
 
-* 1、选择需要的平台SDK和Cocos2d-x环境
+* 4、选择需要的平台SDK
 
-    打开 C2DXShareSDK / iOS / C2DXiOSShareSDK.mm ，按需注释掉已导入的原生SDK库
+
+    打开 ShareSDKManager.m ，按需注释掉已导入的原生SDK库 (不需要的平台SDK也可以做删除处理)
 
   ```
 #define IMPORT_SINA_WEIBO_LIB               //导入新浪微博库，如果不需要新浪微博客户端分享可以注释此行
@@ -105,79 +105,79 @@
 //#define IMPORT_KAKAO_LIB                    //导入Kakao库，如果不需要Kakao分享可以注释此行
 ```
 
-    打开 C2DXShareSDK / C2DXShareSDKTypeDef.h ，按需选择要使用的 Cocos2d-x的版本（切换适配Cocos2d-x 2.x 或者 3.x 版本）
-    
-    ```
- //使用Cocoa2D-X 2.x版本环境打开下面这行注释
- //#define UsingCocoa2DX2
- 
- #ifdef UsingCocoa2DX2
- 
- //...
-```
+## JS 部分
 
-* 2、修改 "AppDelegate" 进行初始化
+* 在需要分享的js文件中设置初始化的平台参数
   
-  a、打开 “AppDelegate.cpp”文件，导入头文件
+  a、首先导入 ShareSDKIOS.js
 
-  ```cpp
-   #include "C2DXShareSDK.h"
+  ```
+   var ShareSDK = require('./ShareSDKIOS')
   ```
 
-  b、在 AppDelegate::applicationDidFinishLaunching() 函数中添加 ShareSDK 各个平台的初始化函数，例如（新浪微博、QQ、微信、Facebook、Twitter)
+  b、在 activePlatforms 数组中配置需要分享的平台
 
-  ```cpp
-    //设置平台配置
-    //Platforms
-    __Dictionary *totalDict = __Dictionary::create();
-    
-    //新浪微博
-    __Dictionary *sinaWeiboConf= __Dictionary::create();
-    sinaWeiboConf->setObject(__String::create("568898243"), "app_key");
-    sinaWeiboConf->setObject(__String::create("38a4f8204cc784f81f9f0daaf31e02e3"), "app_secret");
-    sinaWeiboConf->setObject(__String::create("http://www.sharesdk.cn"), "redirect_uri");
-    stringstream sina;
-    sina << cn::sharesdk::C2DXPlatTypeSinaWeibo;
-    totalDict->setObject(sinaWeiboConf, sina.str());
-    
-    //微信
-    __Dictionary *wechatConf = __Dictionary::create();
-    wechatConf->setObject(__String::create("wx4868b35061f87885"), "app_id");
-    wechatConf->setObject(__String::create("64020361b8ec4c99936c0e3999a9f249"), "app_secret");
-    stringstream wechat;
-    wechat << cn::sharesdk::C2DXPlatTypeWechatPlatform;
-    totalDict->setObject(wechatConf, wechat.str());
-    
-    //QQ
-    __Dictionary *qqConf = __Dictionary::create();
-    qqConf->setObject(__String::create("100371282"), "app_id");
-    qqConf->setObject(__String::create("aed9b0303e3ed1e27bae87c33761161d"), "app_key");
-    stringstream qq;
-    qq << cn::sharesdk::C2DXPlatTypeQQPlatform;
-    totalDict->setObject(qqConf, qq.str());
-    
-    //Facebook
-    __Dictionary *fbConf = __Dictionary::create();
-    fbConf->setObject(__String::create("107704292745179"), "api_key");
-    fbConf->setObject(__String::create("38053202e1a5fe26c80c753071f0b573"), "app_secret");
-    stringstream facebook;
-    facebook << cn::sharesdk::C2DXPlatTypeFacebook;
-    totalDict->setObject(fbConf, facebook.str());
-    
-    //Twitter
-    __Dictionary *twConf = __Dictionary::create();
-    twConf->setObject(__String::create("LRBM0H75rWrU9gNHvlEAA2aOy"), "consumer_key");
-    twConf->setObject(__String::create("gbeWsZvA9ELJSdoBzJ5oLKX0TU09UOwrzdGfo9Tg7DjyGuMe8G"), "consumer_secret");
-    twConf->setObject(__String::create("http://www.mob.com"), "redirect_uri");
-    stringstream twitter;
-    twitter << cn::sharesdk::C2DXPlatTypeTwitter;
-    totalDict->setObject(twConf, twitter.str());
-    
-    //在 ShareSDK 官网后台注册应用并获取Appkey，并填入此方法的第一个参数中
-    cn::sharesdk::C2DXShareSDK::registerAppAndSetPlatformConfig("8e3320a36606", totalDict); 
-```
+  ```
+  var activePlatforms = [
+     ShareSDK.PlatformType.SinaWeibo,
+     ShareSDK.PlatformType.TencentWeibo,
+     ShareSDK.PlatformType.Wechat,
+     ShareSDK.PlatformType.QQ,
+     ShareSDK.PlatformType.Twitter,
+     ShareSDK.PlatformType.Facebook
+  ]
+  ```
+c、在 TotalPlatforms 对象中添加 ShareSDK 各个平台的初始化参数，例如（新浪微博、QQ、微信、Facebook、Twitter)
 
-    [以上平台的app_key、app_secret等字段不同分享平台可能不同，详情可参考](#SocialConfiguration)
+	```
+	// 设置各个平台初始化
+	// platforms
+	var TotalPlatforms =  {
+    	// key 值取自ShareSDK.PlatformType,详情可参阅
+    	// 新浪微博
+    	1 : {
+        	app_key: '568898243',
+        	app_secret: '38a4f8204cc784f81f9f0daaf31e02e3',
+        	redirect_uri: 'http://www.sharesdk.cn',
+        	authType: ShareSDK.AuthType.Both
+    	},
+    	// 腾讯微博
+    	2: {
+        	app_key: '801307650',
+        	app_secret: 'ae36f4ee3946e1cbb98d6965b0b2ff5c',
+        	redirect_uri: 'http://www.sharesdk.cn',
+        	authType: ShareSDK.AuthType.Both
+    	},
+    	// 微信系列 微信好友 微信朋友圈 微信收藏
+    	997: {
+        	app_id: 'wx4868b35061f87885',
+        	app_secret: '64020361b8ec4c99936c0e3999a9f249',
+        	authType: ShareSDK.AuthType.Both
+    	},
+    	// QQ系列 QQ好友 QQ空间
+    	998: {
+        	app_id: '100371282',
+        	app_secret: 'aed9b0303e3ed1e27bae87c33761161d',
+        	authType: ShareSDK.AuthType.Both
+    	}
+    // Facebook
+    // Twitter
+    // Google plus
+    // TODO 平台 app_key,app_id 参数信息表请戳:-》
+	}
+	```
+[以上平台的app_key、app_secret等字段不同分享平台可能不同，详情可参考](#SocialConfiguration)
+
+
+
+
+	d、调用初始化方法进行初始化
+	
+	```
+	// 初始化方法
+	ShareSDK.registerApp('iosv1001',activePlatforms,TotalPlatforms);
+	
+	```
 
 
 ## <a id="interface"></a>3、ShareSDK接口的调用
@@ -186,166 +186,50 @@
 
 * 1、在需要分享操作的代码块中进行构造分享参数，示例如下：
 
-  ```cpp
-reqID += 1; // 分享计数
-    
-    __Dictionary *content = __Dictionary::create();
-    content -> setObject(__String::create("分享文本"), "text");  // 分享文本
-    content -> setObject(__String::create("HelloWorld.png"), "image");// 分享图片
-    content -> setObject(__String::create("测试标题"), "title"); // 分享标题
-    content -> setObject(__String::create("http://www.mob.com"), "url"); // 分享url
-    content -> setObject(__String::createWithFormat("%d", cn::sharesdk::C2DXContentTypeWebPage), "type"); // 分享类型
-```
-
-* 2、调用分享方法：
-
-  ```cpp
-    C2DXShareSDK::showShareMenu(reqID,NULL,content,100,100,shareContentResultHandler); // 第4，5个参数传入 iPad 视图要显示的坐标点，详见API说明
-```
-
-* 3、设置分享回调方法 shareContentResultHandler，示例如下：
-
-  ```cpp
-//分享回调
-void shareContentResultHandler(int seqId, cn::sharesdk::C2DXResponseState state, cn::sharesdk::C2DXPlatType platType, __Dictionary *result)
-{
-    switch (state)
-    {
-        case cn::sharesdk::C2DXResponseStateSuccess:
-        {
-            log("Success");
-        }
-            break;
-        case cn::sharesdk::C2DXResponseStateFail:
-        {
-            log("Fail");
-            //回调错误信息
-            __Array *allKeys = result->allKeys();
-            allKeys->retain();
-            for (int i = 0; i < allKeys-> count(); i++)
-            {
-                __String *key = (__String*)allKeys->getObjectAtIndex(i);
-                Ref *obj = result->objectForKey(key->getCString());
-                
-                log("key = %s", key -> getCString());
-                if (dynamic_cast<__String *>(obj))
-                {
-                    log("value = %s", dynamic_cast<__String *>(obj) -> getCString());
-                }
-                else if (dynamic_cast<__Integer *>(obj))
-                {
-                    log("value = %d", dynamic_cast<__Integer *>(obj) -> getValue());
-                }
-                else if (dynamic_cast<__Double *>(obj))
-                {
-                    log("value = %f", dynamic_cast<__Double *>(obj) -> getValue());
-                }
-            }
-        }
-            break;
-        case cn::sharesdk::C2DXResponseStateCancel:
-        {
-            log("Cancel");
-        }
-            break;
-        default:
-            break;
-    }
+  ```
+  // 构造分享参数
+var shareParams = {
+    Text: '分享内容',
+    images: '',
+    url: 'http://www.mob.com',
+    title: '分享标题',
+    type: ShareSDK.ContentType.Auto
 }
 ```
+
+* 2、调用分享方法,并设置回调：
+
+```
+ // 分享,传入需要分享的平台,已经构建好的分享参数
+           ShareSDK.share(ShareSDK.PlatformType.SinaWeibo,shareParams,(error,events)=>{
+                                       if (error){
+                                        console.error(error);
+                                       }else{
+                                         // 处理分享成功之后的操作
+                                         alert('分享成功');
+                                         console.log(events);
+                                       }
+                                  });}
+ ```
+
 
 ## 授权
 
-* 1、调用授权方法
+* 1、调用授权方法,并设置获取用户信息的回调
 
-   ```cpp
-  reqID += 1;
-    
-   C2DXShareSDK::getUserInfo(reqID, cn::sharesdk::C2DXPlatTypeSinaWeibo, getUserResultHandler);
-   ```
-
-
-
-* 2、设置获取用户数据回调 getUserResultHandler，代码如下：
-
-  ```cpp
-void getUserResultHandler(int reqID, C2DXResponseState state, C2DXPlatType platType, __Dictionary *result)
-{
-    switch (state)
-    {
-        case cn::sharesdk::C2DXResponseStateSuccess:
-        {
-            log("Success");
-            
-            //输出信息
-            try
-            {
-                __Array *allKeys = result -> allKeys();
-                allKeys->retain();
-                for (int i = 0; i < allKeys -> count(); i++)
-                {
-                    __String *key = (__String *)allKeys -> getObjectAtIndex(i);
-                    Ref *obj = result -> objectForKey(key -> getCString());
-                    
-                    log("key = %s", key -> getCString());
-                    if (dynamic_cast<__String *>(obj))
-                    {
-                        log("value = %s", dynamic_cast<__String *>(obj) -> getCString());
-                    }
-                    else if (dynamic_cast<__Integer *>(obj))
-                    {
-                        log("value = %d", dynamic_cast<__Integer *>(obj) -> getValue());
-                    }
-                    else if (dynamic_cast<__Double *>(obj))
-                    {
-                        log("value = %f", dynamic_cast<__Double *>(obj) -> getValue());
-                    }
-                }
-                allKeys->release();
-            }
-            catch(...)
-            {
-                log("==============error");
-            }
-        }
-            break;
-        case cn::sharesdk::C2DXResponseStateFail:
-        {
-            log("Fail");
-            //回调错误信息
-            __Array *allKeys = result->allKeys();
-            allKeys->retain();
-            for (int i = 0; i < allKeys-> count(); i++)
-            {
-                __String *key = (__String*)allKeys->getObjectAtIndex(i);
-                Ref *obj = result->objectForKey(key->getCString());
-                
-                log("key = %s", key -> getCString());
-                if (dynamic_cast<__String *>(obj))
-                {
-                    log("value = %s", dynamic_cast<__String *>(obj) -> getCString());
-                }
-                else if (dynamic_cast<__Integer *>(obj))
-                {
-                    log("value = %d", dynamic_cast<__Integer *>(obj) -> getValue());
-                }
-                else if (dynamic_cast<__Double *>(obj))
-                {
-                    log("value = %f", dynamic_cast<__Double *>(obj) -> getValue());
-                }
-            }
-        }
-            break;
-        case cn::sharesdk::C2DXResponseStateCancel:
-        {
-            log("Cancel");
-        }
-            break;
-        default:
-            break;
-    }
-}
 ```
+      // 平台授权
+              ShareSDK.authorize(ShareSDK.PlatformType.SinaWeibo,(error,events)=>{
+                                       if (error){
+                                        console.error(error);
+                                       }else{
+                                         // 处理分享成功之后的操作
+                                         alert('授权成功');
+                                         console.log(events);
+                                       }
+                                  });}
+```
+
 
 ## <a id="SocialConfiguration"></a>各个分享平台参数配置描述
 各个社交平台在初始化时 app_key、app_secret等字段不同分享平台可能不同，可参考下表进行调整。
