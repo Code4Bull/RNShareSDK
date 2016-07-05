@@ -1,5 +1,6 @@
 ## ShareSDK-iOS (v3.x) for React-Native 
 * JS 开发者方便的集成ShareSDK分享和授权功能。
+* ShareSDK for android 正在路上～
 
 ## 目录
 * Getting started
