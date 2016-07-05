@@ -17,7 +17,6 @@ import {
 var ShareSDK = require('./ShareSDKIOS')
 // -----------------------------------------------------------------------------
 
-// 分享
 // DEMO中的分享按钮
 class CustomButton extends React.Component{
 
@@ -29,6 +28,16 @@ class CustomButton extends React.Component{
     </TouchableHighlight>);
   }
 }
+
+// 将需要分享的平台标记放入一个数组中
+var activePlatforms = [
+    ShareSDK.PlatformType.SinaWeibo,
+    ShareSDK.PlatformType.TencentWeibo,
+    ShareSDK.PlatformType.Wechat,
+    ShareSDK.PlatformType.QQ,
+    ShareSDK.PlatformType.Twitter,
+    ShareSDK.PlatformType.Facebook
+]
 
 // 设置各个平台初始化
 // platforms
@@ -66,15 +75,6 @@ var TotalPlatforms =  {
     // TODO 平台 app_key,app_id 参数信息表请戳:-》
 }
 
-// 将需要分享的平台标记放入一个数组中
-var activePlatforms = [
-    ShareSDK.PlatformType.SinaWeibo,
-    ShareSDK.PlatformType.TencentWeibo,
-    ShareSDK.PlatformType.Wechat,
-    ShareSDK.PlatformType.QQ,
-    ShareSDK.PlatformType.Twitter,
-    ShareSDK.PlatformType.Facebook
-]
 // 初始化方法
 ShareSDK.registerApp('iosv1001',activePlatforms,TotalPlatforms);
 
