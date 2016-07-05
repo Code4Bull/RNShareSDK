@@ -54,7 +54,6 @@ RCT_EXPORT_MODULE();
 #pragma mark 初始化
 RCT_EXPORT_METHOD(registerApp:(NSString *)AppKey activePlatforms:(NSArray *)activePlatforms TotalPlatforms : (NSDictionary *)TotalPlatforms)
 {
-  NSLog(@"%@",activePlatforms);
   [ShareSDK registerApp:AppKey activePlatforms:activePlatforms onImport:^(SSDKPlatformType platformType) {
     switch (platformType)
     {
@@ -111,6 +110,7 @@ RCT_EXPORT_METHOD(registerApp:(NSString *)AppKey activePlatforms:(NSArray *)acti
 #pragma mark 无UI分享
 RCT_EXPORT_METHOD(share:(NSInteger)platformType shareParams:(NSDictionary *)shareParams callback:(RCTResponseSenderBlock)callback)
 {
+  NSLog(@"shareParams-->%@",shareParams);
   NSMutableDictionary * ShareContentDict = [NSMutableDictionary new];
   
   [ShareContentDict SSDKSetupShareParamsByText:[shareParams objectForKey:@"Text"]

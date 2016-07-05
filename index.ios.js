@@ -14,13 +14,7 @@ import {
 } from 'react-native';
 
 // ------------------------------------------------------------------------------
-var ShareSDKIOS = require('./ShareSDKIOS')
-var ShareSDKTypeDefine = require('./ShareSDKTypeDefine')
-var ShareSDKManager = require('react-native').NativeModules.ShareSDKManager;
-
-// 传入初始化的KEY,在ShreSDKIOS中配置好的要分享的平台,和各个平台的初始化信息传入registerApp方法中
-// iosv1001 为测试key,随时有可能删除,请到 http://www.mob.com 获取
-ShareSDKManager.registerApp("iosv1001",ShareSDKIOS.activePlatforms,ShareSDKIOS.TotalPlatforms);
+var ShareSDK = require('./ShareSDKIOS')
 // -----------------------------------------------------------------------------
 
 // 分享
@@ -36,17 +30,72 @@ class CustomButton extends React.Component{
   }
 }
 
+// 设置各个平台初始化
+// platforms
+var TotalPlatforms =  {
+    // key 值取自ShareSDK.PlatformType,详情可参阅
+    // 新浪微博
+    1 : {
+        app_key: '568898243',
+        app_secret: '38a4f8204cc784f81f9f0daaf31e02e3',
+        redirect_uri: 'http://www.sharesdk.cn',
+        authType: ShareSDK.AuthType.Both
+    },
+    // 腾讯微博
+    2: {
+        app_key: '801307650',
+        app_secret: 'ae36f4ee3946e1cbb98d6965b0b2ff5c',
+        redirect_uri: 'http://www.sharesdk.cn',
+        authType: ShareSDK.AuthType.Both
+    },
+    // 微信系列 微信好友 微信朋友圈 微信收藏
+    997: {
+        app_id: 'wx4868b35061f87885',
+        app_secret: '64020361b8ec4c99936c0e3999a9f249',
+        authType: ShareSDK.AuthType.Both
+    },
+    // QQ系列 QQ好友 QQ空间
+    998: {
+        app_id: '100371282',
+        app_secret: 'aed9b0303e3ed1e27bae87c33761161d',
+        authType: ShareSDK.AuthType.Both
+    }
+    // Facebook
+    // Twitter
+    // Google plus
+    // TODO 平台 app_key,app_id 参数信息表请戳:-》
+}
+
+// 将需要分享的平台标记放入一个数组中
+var activePlatforms = [
+    ShareSDK.PlatformType.SinaWeibo,
+    ShareSDK.PlatformType.TencentWeibo,
+    ShareSDK.PlatformType.Wechat,
+    ShareSDK.PlatformType.QQ,
+    ShareSDK.PlatformType.Twitter,
+    ShareSDK.PlatformType.Facebook
+]
+// 初始化方法
+ShareSDK.registerApp('iosv1001',activePlatforms,TotalPlatforms);
+
+// 构造分享参数
+var shareParams = {
+    Text: '分享内容',
+    images: '',
+    url: 'http://www.mob.com',
+    title: '分享标题',
+    type: ShareSDK.ContentType.Auto
+}
+// TODO 每个平台分享不同的内容
+
 class RNShareSDK extends Component {
 
   render() {
     return (
         <View>
           <CustomButton onPress={()=>{
-            
            // 分享,传入需要分享的平台,已经构建好的分享参数
-           ShareSDKManager.share(ShareSDKTypeDefine.PlatformType.SinaWeibo,
-                            ShareSDKIOS.shareParams,
-                                  (error,events)=>{
+           ShareSDK.share(ShareSDK.PlatformType.SinaWeibo,shareParams,(error,events)=>{
                                        if (error){
                                         console.error(error);
                                        }else{
@@ -60,9 +109,7 @@ class RNShareSDK extends Component {
 
           <CustomButton onPress={()=>{
               // 弹出actionSheet进行分享
-              ShareSDKManager.showShareActionSheet(ShareSDKIOS.activePlatforms,
-                                  ShareSDKIOS.shareParams,
-                                  (error,events)=>{
+              ShareSDK.showShareActionSheet(activePlatforms,shareParams,(error,events)=>{
                                        if (error){
                                         console.error(error);
                                        }else{
@@ -76,9 +123,7 @@ class RNShareSDK extends Component {
 
             <CustomButton onPress={()=>{
               // 弹出编辑框进行分享
-              ShareSDKManager.showShareEditor(ShareSDKTypeDefine.PlatformType.SinaWeibo,
-                                  ShareSDKIOS.shareParams,
-                                   (error,events)=>{
+              ShareSDK.showShareEditor(ShareSDK.PlatformType.SinaWeibo,shareParams,(error,events)=>{
                                        if (error){
                                         console.error(error);
                                        }else{
@@ -91,8 +136,7 @@ class RNShareSDK extends Component {
 
           <CustomButton onPress={()=>{
               // 平台授权
-              ShareSDKManager.authorize(ShareSDKTypeDefine.PlatformType.SinaWeibo,
-                                  (error,events)=>{
+              ShareSDK.authorize(ShareSDK.PlatformType.SinaWeibo,(error,events)=>{
                                        if (error){
                                         console.error(error);
                                        }else{
@@ -105,7 +149,7 @@ class RNShareSDK extends Component {
           } text="授权"/>
 
           <CustomButton onPress={()=>{
-              ShareSDKManager.cancelAuthorize(ShareSDKTypeDefine.PlatformType.SinaWeibo);
+              ShareSDK.cancelAuthorize(ShareSDK.PlatformType.SinaWeibo);
               alert("平台取消授权成功")}
 
           } text="取消授权"/>
