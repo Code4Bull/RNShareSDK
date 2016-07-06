@@ -201,7 +201,7 @@ var shareParams = {
 
 * 2、调用分享方法,并设置回调：
 
-```
+  ```
  // 分享,传入需要分享的平台,已经构建好的分享参数
            ShareSDK.share(ShareSDK.PlatformType.SinaWeibo,shareParams,(error,events)=>{
                                        if (error){
