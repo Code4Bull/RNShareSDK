@@ -22,7 +22,7 @@
   （2）React-Native 插件的下载: ：[网页链接](https://github.com/kengsir/RNShareSDK)
 （包含demo，需要的是ShareSDKManager.h / ShareSDKManager.m / ShareSDKIOS.js[暂名]）
 
-![初始化](http://ww2.sinaimg.cn/mw690/6f5f9fe7gw1f5ji9gh9f1j20w20l4acp.jpg)
+    ![初始化](http://ww2.sinaimg.cn/mw690/6f5f9fe7gw1f5ji9gh9f1j20w20l4acp.jpg)
 
 * 将以上文件ShareSDKManager.h / ShareSDKManager.m / ShareSDK 拖到新建的 RN 项目中的 ios 目录下，将 ShareSDKIOS.js 拖入 RN 项目中。
 
