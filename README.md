@@ -219,7 +219,7 @@ var shareParams = {
 
 * 1、调用授权方法,并设置获取用户信息的回调
 
-```
+ ```
       // 平台授权
               ShareSDK.authorize(ShareSDK.PlatformType.SinaWeibo,(error,events)=>{
                                        if (error){
