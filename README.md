@@ -20,11 +20,11 @@
   （1）ShareSDK iOS 版本的下载：[网页链接](http://www.mob.com/#/downloadDetail/ShareSDK/ios)
   
   （2）React-Native 插件的下载: ：[网页链接](https://github.com/kengsir/RNShareSDK)
-（包含demo，需要的是ShareSDKManager.h / ShareSDKManager.m / ShareSDKIOS.js[暂名]）
+（包含demo，需要的是ShareSDKManager.h / ShareSDKManager.m / ShareSDK.js[暂名]）
 
     ![初始化](http://ww2.sinaimg.cn/mw690/6f5f9fe7gw1f5ji9gh9f1j20w20l4acp.jpg)
 
-* 将以上文件ShareSDKManager.h / ShareSDKManager.m / ShareSDK 拖到新建的 RN 项目中的 ios 目录下，将 ShareSDKIOS.js 拖入 RN 项目中。
+* 将以上文件ShareSDKManager.h / ShareSDKManager.m / ShareSDK 拖到新建的 RN 项目中的 ios 目录下，将 ShareSDK.js 拖入 RN 项目中。
 
 
 ## <a id="init"></a> 2、初始化ShareSDK并设置社交平台
@@ -111,7 +111,7 @@
 
 * 在需要分享的js文件中设置初始化的平台参数
   
-  a、首先导入 ShareSDKIOS.js
+  a、首先导入 ShareSDK.js
 
   ```
    var ShareSDK = require('./ShareSDKIOS')

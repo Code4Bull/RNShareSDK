@@ -96,11 +96,10 @@ RCT_EXPORT_METHOD(registerApp:(NSString *)AppKey activePlatforms:(NSArray *)acti
     }
     
   } onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
-    // 枚举取下标
+   
     NSDictionary * dict = [TotalPlatforms objectForKey:[NSString stringWithFormat:@"%zi",platformType]];
- 
     [appInfo addEntriesFromDictionary:dict];
-    
+
   }];
 }
 

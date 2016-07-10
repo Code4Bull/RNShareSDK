@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('RNShareSDK', () => RNShareSDK);
+AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
