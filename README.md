@@ -109,12 +109,12 @@
 
 ## JS 部分
 
-* 在需要分享的js文件中设置初始化的平台参数
+* 在 index.ios.js 文件中进行初始化操作 （确定要分享出去的平台，初始化分享平台的参数信息）
   
   a、首先导入 ShareSDKIOS.js
 
   ```
-   var ShareSDK = require('./ShareSDKIOS')
+   var ShareSDK = require('./ShareSDK')
   ```
 
   b、在 activePlatforms 数组中配置需要分享的平台
@@ -137,27 +137,27 @@ c、在 TotalPlatforms 对象中添加 ShareSDK 各个平台的初始化参数�
 	var TotalPlatforms =  {
     	// key 值取自ShareSDK.PlatformType,详情可参阅
     	// 新浪微博
-    	1 : {
+    	[ShareSDK.PlatformType.SinaWeibo] : {
         	app_key: '568898243',
         	app_secret: '38a4f8204cc784f81f9f0daaf31e02e3',
         	redirect_uri: 'http://www.sharesdk.cn',
         	authType: ShareSDK.AuthType.Both
     	},
     	// 腾讯微博
-    	2: {
+    	[ShareSDK.PlatformType.TencentWeibo] : {
         	app_key: '801307650',
         	app_secret: 'ae36f4ee3946e1cbb98d6965b0b2ff5c',
         	redirect_uri: 'http://www.sharesdk.cn',
         	authType: ShareSDK.AuthType.Both
     	},
     	// 微信系列 微信好友 微信朋友圈 微信收藏
-    	997: {
+    	[ShareSDK.PlatformType.Wechat] : {
         	app_id: 'wx4868b35061f87885',
         	app_secret: '64020361b8ec4c99936c0e3999a9f249',
         	authType: ShareSDK.AuthType.Both
     	},
     	// QQ系列 QQ好友 QQ空间
-    	998: {
+    	 [ShareSDK.PlatformType.QQ] : {
         	app_id: '100371282',
         	app_secret: 'aed9b0303e3ed1e27bae87c33761161d',
         	authType: ShareSDK.AuthType.Both
