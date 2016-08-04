@@ -54,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShareSDKReactPackager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ShareSDKReactPackager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/ShareSDKReactPackager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6635071">
+            <state vertical-scroll-proportion="0.0">
               <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -66,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainApplication.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/MainApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.37128714">
+              <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -1697,11 +1697,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/ShareSDKManager_android.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/sharesdk/onekeyshare/OnekeyShare.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/MainApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/ShareSDKandroid.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/ShareSDKReactPackager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/RNPlatformListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/ShareSDKManagerAndroid.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/MainApplication.java" />
       </list>
     </option>
   </component>
@@ -2176,7 +2176,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1276" height="777" extended-state="7" />
+    <frame x="4" y="23" width="1276" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2638,14 +2638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/MainApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/ShareSDKManagerAndroid.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-126.666664">
@@ -2668,11 +2660,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/ShareSDKReactPackager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6635071">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rnsharesdk/MainApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37128714">
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -70,7 +70,12 @@ class RNShareSDK extends Component {
           
           } text="弹出编辑框分享"/>
 
-          <CustomButton onPress={ ()=>{alert(1)}
+          <CustomButton onPress={ ()=>{
+
+                ShareSDK.authorize(ShareSDK.platformType.SinaWeibo);
+                //设置回调,接收返回信息
+                ShareSDK.callBack();
+                }
 
           } text="授权"/>
 
