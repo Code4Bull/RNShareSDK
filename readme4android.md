@@ -1,23 +1,6 @@
 ## ShareSDK-Android (v2.7.4) for React-Native
 * JavaScript 开发者方便的集成ShareSDK分享和授权功能。
 
-## 目录
-* Getting started
-    * [1、新建项目并下载 ShareSDK](#Download)
-    * [2、初始化ShareSDK并设置社交平台](#init)
-    * [3、ShareSDK接口的调用](#interface)
-* Notice
-    * [各个分享平台参数配置描述](#SocialConfiguration)
-    * [构造分享内容字段参数值](#ContentConfiguration)
-    
-
-
-## <a id="Download"></a>1、新建项目并下载 ShareSDK
-* 1、ReactNative 项目环境搭建，不会的童鞋自行面壁哈: [网页链接](http://reactnative.cn/docs/0.27/getting-started.html#content).
-* 2、ShareSDK Android版本的 RN 插件是在ShareSDK Android版本基础上对原生模块的接口做导出供给JS端使用，是依赖ShareSDK for Android的。所以下载本示例DEMO就包含了以下2部分，下载下来的文件目录截图如下：：
-
-  （1）ShareSDK android版本的下载地址：[网页链接](http://www.mob.com/#/downloadDetail/ShareSDK/android)## ShareSDK-Android (v2.7.4) for React-Native
-* JavaScript 开发者方便的集成ShareSDK分享和授权功能。
 
 ## 目录
 * Getting started
