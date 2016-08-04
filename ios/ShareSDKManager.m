@@ -47,9 +47,12 @@
 
 
 @implementation ShareSDKManager
-
 // 这个宏定义使得ShareSDKManager这个类可以导出给JS端使用
 RCT_EXPORT_MODULE();
+
+- (NSArray<NSString *> *)supportedEvents {
+  return @[@"success",@"fail",@"cancel"];
+}
 
 #pragma mark 初始化
 RCT_EXPORT_METHOD(registerApp:(NSString *)AppKey activePlatforms:(NSArray *)activePlatforms TotalPlatforms : (NSDictionary *)TotalPlatforms)
@@ -107,12 +110,12 @@ RCT_EXPORT_METHOD(registerApp:(NSString *)AppKey activePlatforms:(NSArray *)acti
 
 
 #pragma mark 无UI分享
-RCT_EXPORT_METHOD(share:(NSInteger)platformType shareParams:(NSDictionary *)shareParams callback:(RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(share:(NSInteger)platformType shareParams:(NSDictionary *)shareParams)
 {
   NSLog(@"shareParams-->%@",shareParams);
   NSMutableDictionary * ShareContentDict = [NSMutableDictionary new];
   
-  [ShareContentDict SSDKSetupShareParamsByText:[shareParams objectForKey:@"Text"]
+  [ShareContentDict SSDKSetupShareParamsByText:[shareParams objectForKey:@"text"]
                                       images:nil
                                          url:[NSURL URLWithString:[shareParams objectForKey:@"url"]]
                                        title:[shareParams objectForKey:@"title"]
@@ -121,12 +124,23 @@ RCT_EXPORT_METHOD(share:(NSInteger)platformType shareParams:(NSDictionary *)shar
   [ShareSDK share:(SSDKPlatformType)platformType parameters:ShareContentDict onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
       switch (state) {
         case SSDKResponseStateFail:
-          callback(@[[error description]]);
-        break;
+          //callback(@[[error description]]);
+          
+          [self sendEventWithName:@"fail" body:@{@"error":[error description] }];
+          break;
         
+        case SSDKResponseStateCancel:
+          [self sendEventWithName:@"cancel" body:@{@"error": @"取消分享" }];
+          break;
+          
         case SSDKResponseStateSuccess:
-          callback(@[[NSNull null],userData]);
-        break;
+          //callback(@[[NSNull null],[contentEntity rawData]]);
+          [self sendEventWithName:@"success" body:@{@"rawdata":[contentEntity rawData] }];
+          
+          NSLog(@"success");
+          break;
+          
+          
       default:
         break;
     }
@@ -134,7 +148,7 @@ RCT_EXPORT_METHOD(share:(NSInteger)platformType shareParams:(NSDictionary *)shar
 }
 
 #pragma mark ActionSheet分享
-RCT_EXPORT_METHOD(showShareActionSheet:(NSArray*)items shareParams:(NSDictionary *)shareParams callback:(RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(showShareActionSheet:(NSArray*)items shareParams:(NSDictionary *)shareParams)
 {
   NSMutableDictionary * ShareContentDict = [NSMutableDictionary new];
   
@@ -147,16 +161,24 @@ RCT_EXPORT_METHOD(showShareActionSheet:(NSArray*)items shareParams:(NSDictionary
   // 主线程执行：
   dispatch_async(dispatch_get_main_queue(), ^{
     // TODO items 的数据处理
-    [ShareSDK showShareActionSheet:nil items:nil shareParams:ShareContentDict onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
-        switch (state) {
+    [ShareSDK showShareActionSheet:nil items:items shareParams:ShareContentDict onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
+      switch (state) {
         case SSDKResponseStateFail:
-          callback(@[[error description]]);
-        break;
+          //callback(@[[error description]]);
+          [self sendEventWithName:@"fail" body:@{@"error":[error description] }];
+          break;
+          
+        case SSDKResponseStateCancel:
+          [self sendEventWithName:@"cancel" body:@{@"error":@"取消分享" }];
+          break;
           
         case SSDKResponseStateSuccess:
-            // 返回内容实体对象
-          callback(@[[NSNull null],[contentEntity rawData]]);
-        break;
+          //callback(@[[NSNull null],[contentEntity rawData]]);
+          [self sendEventWithName:@"success" body:@{@"rawdata":[contentEntity rawData] }];
+          
+          NSLog(@"success");
+          break;
+
         
         default:
           break;
@@ -167,7 +189,7 @@ RCT_EXPORT_METHOD(showShareActionSheet:(NSArray*)items shareParams:(NSDictionary
 }
 
 #pragma mark 弹出编辑框分享
-RCT_EXPORT_METHOD(showShareEditor:(NSInteger)platformType shareParams:(NSDictionary *)shareParams callback:(RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(showShareEditor:(NSInteger)platformType shareParams:(NSDictionary *)shareParams)
 {
   NSMutableDictionary * ShareContentDict = [NSMutableDictionary new];
   
@@ -182,11 +204,20 @@ RCT_EXPORT_METHOD(showShareEditor:(NSInteger)platformType shareParams:(NSDiction
     [ShareSDK showShareEditor:(SSDKPlatformType)platformType otherPlatformTypes:nil shareParams:ShareContentDict onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
       switch (state) {
         case SSDKResponseStateFail:
-          callback(@[[error description]]);
+          //callback(@[[error description]]);
+          
+          [self sendEventWithName:@"fail" body:@{@"error":[error description] }];
+          break;
+          
+        case SSDKResponseStateCancel:
+          [self sendEventWithName:@"cancel" body:@{@"error":@"取消分享" }];
           break;
           
         case SSDKResponseStateSuccess:
-          callback(@[[NSNull null],[contentEntity rawData]]);
+          //callback(@[[NSNull null],[contentEntity rawData]]);
+          [self sendEventWithName:@"success" body:@{@"rawdata":[contentEntity rawData] }];
+          
+          NSLog(@"success");
           break;
           
         default:
@@ -199,29 +230,74 @@ RCT_EXPORT_METHOD(showShareEditor:(NSInteger)platformType shareParams:(NSDiction
 
 
 #pragma mark 授权
-RCT_EXPORT_METHOD(authorize:(NSInteger)platformType callback:(RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(authorize:(NSInteger)platformType)
 {
   [ShareSDK authorize:(SSDKPlatformType)platformType settings:nil onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
     switch (state) {
       case SSDKResponseStateFail:
         // TODO callback 第二个参数为数组，将返回值全部都丢在这个数组中
-        callback(@[[error description]]);
+        //callback(@[[error description]]);
+        
+        [self sendEventWithName:@"fail" body:@{@"error":[error description] }];
         break;
-  
+        
+      case SSDKResponseStateCancel:
+        [self sendEventWithName:@"cancel" body:@{@"error":@"取消分享" }];
+        break;
+        
       case SSDKResponseStateSuccess:
-        callback(@[[NSNull null],[user rawData]]);
+        //callback(@[[NSNull null],[contentEntity rawData]]);
+        [self sendEventWithName:@"success" body:@{@"rawdata":[user rawData] }];
+        
+        NSLog(@"success");
         break;
-  
+
       default:
         break;
     }
   }];
 }
 
+#pragma mark 检查平台是否已经授权
+RCT_EXPORT_METHOD(isAuthValid:(NSInteger)platformType)
+{
+  [ShareSDK hasAuthorized:platformType];
+}
+
 #pragma mark 取消授权
 RCT_EXPORT_METHOD(cancelAuthorize:(NSInteger)platformType)
 {
   [ShareSDK cancelAuthorize:(SSDKPlatformType)platformType];
+}
+
+#pragma mark 获取用户信息
+RCT_EXPORT_METHOD(getUserInfo:(NSInteger)platformType)
+{
+  [ShareSDK getUserInfo:platformType onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
+    switch (state) {
+      case SSDKResponseStateFail:
+        // TODO callback 第二个参数为数组，将返回值全部都丢在这个数组中
+        //callback(@[[error description]]);
+        
+        [self sendEventWithName:@"fail" body:@{@"error":[error description] }];
+        break;
+        
+      case SSDKResponseStateCancel:
+        [self sendEventWithName:@"cancel" body:@{@"error":@"取消分享" }];
+        break;
+        
+      case SSDKResponseStateSuccess:
+        //callback(@[[NSNull null],[contentEntity rawData]]);
+        [self sendEventWithName:@"success" body:@{@"rawdata":[user rawData] }];
+        
+        NSLog(@"success");
+        break;
+        
+      default:
+        break;
+    }
+
+  }];
 }
 
 @end

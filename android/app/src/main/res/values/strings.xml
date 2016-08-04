@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">RNShareSDK</string>
+    <string name="app_name">ShareDemo - ShareSDK</string>
+    <string name="app_btn1">有九宫格、有编辑页</string>
+    <string name="app_btn2">有九宫格、无编辑页</string>
+    <string name="app_btn3">无九宫格、有编辑页</string>
+    <string name="app_btn4">无九宫格、无编辑页</string>
+    <string name="app_derect_share">直接分享</string>
 </resources>

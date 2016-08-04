@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:1:1-30:12
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:1:1-90:12
 	xmlns:android
 		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:1:11-69
 	package
@@ -21,92 +21,200 @@ ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/
 		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:7:5-77
-MERGED from [com.facebook.react:react-native:0.28.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.28.0/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.30.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.30.0/AndroidManifest.xml:11:5-78
 	android:name
 		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:7:22-75
+uses-permission#android.permission.GET_TASKS
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:8:5-68
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:8:22-65
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:10:5-76
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:10:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:11:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:12:22-73
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:13:22-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:14:5-75
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:14:22-72
+uses-permission#android.permission.MANAGE_ACCOUNTS
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:15:5-73
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:15:22-71
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:16:5-70
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:16:22-68
+uses-permission#android.permission.BLUETOOTH
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:18:5-68
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:18:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:19:5-74
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:19:22-71
 uses-sdk
-ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:9:5-11:41
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:21:5-23:41
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.react:react-native:0.28.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.28.0/AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.fresco:fresco:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fresco:fbcore:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fresco:fbcore:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fresco:fbcore:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fresco:fbcore:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fresco:fbcore:0.10.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.10.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.react:react-native:0.30.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.30.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.11.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:recyclerview-v7:23.0.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:11:9-38
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:23:9-38
 		INJECTED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:22:9-35
 		INJECTED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml
 application
-ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:13:5-28:19
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:25:5-88:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
-MERGED from [com.facebook.react:react-native:0.28.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.28.0/AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.react:react-native:0.30.0] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.30.0/AndroidManifest.xml:13:5-20
 MERGED from [org.webkit:android-jsc:r174650] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/org.webkit/android-jsc/r174650/AndroidManifest.xml:2:3-17
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.2.1] /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:15:7-39
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:28:7-39
 	android:allowBackup
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:14:7-33
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:27:7-33
 	android:icon
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:16:7-41
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:29:7-41
 	android:theme
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:17:7-38
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:30:7-38
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:26:7-38
 activity#com.rnsharesdk.MainActivity
-ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:18:7-26:18
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:31:7-39:18
 	android:label
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:20:9-41
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:33:9-41
 	android:configChanges
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:21:9-79
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:34:9-79
 	android:name
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:19:9-37
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:32:9-37
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:22:9-25:25
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:35:9-38:25
 action#android.intent.action.MAIN
-ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:23:13-65
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:36:13-65
 	android:name
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:23:21-62
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:36:21-62
 category#android.intent.category.LAUNCHER
-ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:24:13-73
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:37:13-73
 	android:name
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:24:23-70
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:37:23-70
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:27:7-84
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:40:7-84
 	android:name
-		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:27:17-81
-android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:1:1-30:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
-android:uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:1:1-30:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:40:17-81
+activity#com.mob.tools.MobUIShell
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:42:9-61:20
+	android:windowSoftInputMode
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:47:13-67
+	android:screenOrientation
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:46:13-49
+	android:configChanges
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:45:13-74
+	android:theme
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:44:13-72
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:43:13-52
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:49:13-54:29
+data
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:50:17-59
+	android:scheme
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:50:23-56
+action#android.intent.action.VIEW
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:51:17-69
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:51:25-66
+category#android.intent.category.BROWSABLE
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:52:17-78
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:52:27-75
+category#android.intent.category.DEFAULT
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:53:17-76
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:53:27-73
+intent-filter#android.intent.category.DEFAULT+com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:57:13-60:29
+action#com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:58:17-92
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:58:25-89
+activity#com.rnsharesdk.wxapi.WXEntryActivity
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:64:9-69:52
+	android:screenOrientation
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:69:13-49
+	android:configChanges
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:67:13-74
+	android:theme
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:66:13-72
+	android:exported
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:68:13-36
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:65:13-50
+activity#com.rnsharesdk.yxapi.YXEntryActivity
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:72:9-77:52
+	android:screenOrientation
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:77:13-49
+	android:configChanges
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:75:13-74
+	android:theme
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:74:13-72
+	android:exported
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:76:13-36
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:73:13-50
+activity#com.rnsharesdk.apshare.ShareEntryActivity
+ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:80:9-84:38
+	android:configChanges
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:83:13-74
+	android:theme
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:82:13-72
+	android:exported
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:84:13-36
+	android:name
+		ADDED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:81:13-55
 android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:1:1-30:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/kengsir/Desktop/react/Project/RNShareSDK/android/app/src/main/AndroidManifest.xml:1:1-90:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE

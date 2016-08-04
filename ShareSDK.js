@@ -4,21 +4,28 @@ import {
     Platform
 } from 'react-native';
 
+// 导入iOS原生模块
 var ShareSDKManager = require('react-native').NativeModules.ShareSDKManager;
+// 导入android原生模块
+var ShareSDKManagerAndroid = require('react-native').NativeModules.ShareSDKManagerAndroid;
+
+// 导入iOS android的回调
+var { NativeEventEmitter , DeviceEventEmitter , NativeModules} = require('react-native');
+
 
 var ShareSDK = {
     
     isRuning : false,
-    
+
     // 定义授权类型
-    AuthType : {
+    authType : {
         Both            : 0,   // 结合SSO和Web授权方式
         SSO             : 1,   // SSO授权方式
         Web             : 2    // 网页授权方式
     },
 
     // 定义分享内容类型
-    ContentType: {
+    contentType: {
         Auto            : 0, // 自动适配类型，视传入的参数来决定
         Text            : 1, // 文本
         Image           : 2, // 图片
@@ -26,7 +33,7 @@ var ShareSDK = {
         // TODO 类型可以参考 -> ../RNShareSDK/ios/ShareSDK/ShareSDK.framework/Headers/TypeDefine.h
     },
     // 定义分享平台类型
-    PlatformType: {
+    platformType: {
         Unknown         : 0,    // 未知
         SinaWeibo       : 1,    // 新浪微博
         TencentWeibo    : 2,    // 腾讯微博
@@ -77,66 +84,128 @@ var ShareSDK = {
 
 
     // 初始化方法
-    registerApp(Appkey,activePlatforms, TotalPlatforms) {
-        // 传入初始化的KEY,在ShreSDKIOS中配置好的要分享的平台,和各个平台的初始化信息传入registerApp方法中
-        // iosv1001 为测试key,随时有可能删除,请到 http://www.mob.com 获取
-        ShareSDKManager.registerApp(Appkey,activePlatforms,TotalPlatforms);
+    registerApp(appkey, activePlatforms, totalPlatforms) {
+        if(Platform.OS === 'ios'){
+            // 传入初始化的key,在index.ios.js中配置好的要分享的平台,和各个平台的初始化信息传入registerApp方法中
+            // iosv1001 为测试key,随时有可能删除,请到 http://www.mob.com 获取
+            ShareSDKManager.registerApp(appkey,activePlatforms,totalPlatforms);
+        }else{
+            // 执行android的操作,android端初始化可以在XML中配置
+        }
     },
 
     // 无UI分享
-    share(PlatformType,shareParams,callback){
+    share(platformType,shareParams){
         if(Platform.OS === 'ios'){
             // 执行iOS的操作
-            ShareSDKManager.share(PlatformType,shareParams,callback);
+            // TODO iOS 修改分享平台的设置地方
+            ShareSDKManager.share(platformType,shareParams);
         }else {
             // 执行android的操作
+            ShareSDKManagerAndroid.share(platformType,shareParams);
         }
-    },   
-    
+    },
+
     // 弹出ActionSheet分享
-    showShareActionSheet(activePlatforms, shareParams,callback){
+    showShareActionSheet(activePlatforms, shareParams){
         if(Platform.OS === 'ios'){
             // 执行iOS的操作
-            ShareSDKManager.showShareActionSheet(activePlatforms, shareParams,callback);
+            ShareSDKManager.showShareActionSheet(activePlatforms,shareParams);
         }else {
-            // 执行android的操作
+            // 执行android的操作,弹出分享九宫格
+            ShareSDKManagerAndroid.onekeyShare(activePlatforms, shareParams);
         }
     },
-    
+
     // 弹出编辑框分享
-    showShareEditor(PlatformType,shareParams,callback){
-        
+    showShareEditor(platformType,shareParams){
         if(Platform.OS === 'ios'){
             // 执行iOS的操作
-            ShareSDKManager.showShareEditor(PlatformType,shareParams,callback);
+            ShareSDKManager.showShareEditor(platformType,shareParams);
         }else {
             // 执行android的操作
+            
         }
     },
-    
+
     // 授权方法
-    authorize(PlatformType,callback){
+    authorize(platformType){
         if(Platform.OS === 'ios'){
             // 执行iOS的操作
-            ShareSDKManager.authorize(PlatformType,callback);
+            ShareSDKManager.authorize(platformType);
         }else {
             // 执行android的操作
+            ShareSDKManagerAndroid.authorize(platformType);
         }
     },
-    
-    // 取消授权
-    cancelAuthorize(PlatformType){
+
+    // 检查平台是否已经授权
+    hasAuthorized(platformType){
         if(Platform.OS === 'ios'){
             // 执行iOS的操作
-            ShareSDKManager.cancelAuthorize(PlatformType);
+            ShareSDKManager.hasAuthorized(platformType);
         }else {
             // 执行android的操作
+            ShareSDKManagerAndroid.isAuthValid(platformType);
+        }
+    },
+
+
+    // 检查是否案安装客户端
+    
+
+
+    // 取消授权
+    cancelAuthorize(platformType){
+        if(Platform.OS === 'ios'){
+            // 执行iOS的操作
+            ShareSDKManager.cancelAuthorize(platformType);
+        }else {
+            // 执行android的操作
+            ShareSDKManagerAndroid.removeAccount(platformType);
+        }
+    },
+
+    // 获取用户信息
+    getUserInfo(platformType){
+        if(Platform.OS === 'ios'){
+            // 执行iOS的操作
+            ShareSDKManager.getUserInfo(platformType);
+        }else {
+            // 执行android的操作
+            ShareSDKManagerAndroid.getAuthInfo(platformType);
+        }
+    },
+
+    // 回调器
+    callBack(success,fail,cancel){
+        if(Platform.OS === 'ios'){
+            // 执行iOS的操作
+            var successListener = new NativeEventEmitter(NativeModules.ShareSDKManager)
+            successListener.addListener('success', (data) => console.log(data), success)
+
+            var failListener = new NativeEventEmitter(NativeModules.ShareSDKManager)
+            failListener.addListener('fail', (data) => console.log(data), fail)
+
+            var cancelListener = new NativeEventEmitter(NativeModules.ShareSDKManager)
+            cancelListener.addListener('cancel', (data) => console.log(data), cancel)
+
+        }else {
+            // 执行android的操作
+            var completeListener = DeviceEventEmitter.addListener('OnComplete',(e)=>{
+                console.log(e),
+                success
+            });
+
+            var errorListener = DeviceEventEmitter.addListener('OnError',(e)=>{
+                console.log(e),fail
+            });
+
+            var cancelListener = DeviceEventEmitter.addListener('OnCancel',(e)=>{
+                console.log(e),cancel
+            });
         }
     }
 }
 
 module.exports = ShareSDK;
-
-
-
-

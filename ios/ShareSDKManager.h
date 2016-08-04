@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RCTBridgeModule.h"
+#import "RCTEventEmitter.h"
 
-@interface ShareSDKManager : NSObject <RCTBridgeModule>
+@interface ShareSDKManager : RCTEventEmitter <RCTBridgeModule>
 @end

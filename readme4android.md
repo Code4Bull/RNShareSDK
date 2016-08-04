@@ -1,5 +1,5 @@
-## ShareSDK-iOS (v3.x) for Cocos2d-x 
-* Cocos2d-x开发者方便的集成ShareSDK分享和授权功能。
+## ShareSDK-Android (v2.7.4) for React-Native
+* javaScript 开发者方便的集成ShareSDK分享和授权功能。
 
 ## 目录
 * Getting started
@@ -13,8 +13,8 @@
 
 
 ## <a id="Download"></a>1、新建项目并下载 ShareSDK
-* 1、Cocos2d-x项目环境搭建，不会的童鞋自行面壁哈: [网页链接](http://www.jianshu.com/p/676f2e9096d4).
-* 2、ShareSDK iOS版本的 Cocos2d-x 插件是在ShareSDK iOS版本基础上对接口做个C++接口的封装，是依赖ShareSDK for iOS的。所以下载ShareSDK就包含了以下2部分，下载下来的文件目录截图如下：
+* 1、ReactNative 项目环境搭建，不会的童鞋自行面壁哈: [网页链接](http://reactnative.cn/docs/0.27/getting-started.html#content).
+* 2、ShareSDK Android版本的 RN 插件是在ShareSDK Android版本基础上对原生模块的接口做导出供给JS端使用，是依赖ShareSDK for Android的。所以下载本示例DEMO就包含了以下2部分，下载下来的文件目录截图如下：：
 
   （1）ShareSDK iOS版本的下载：[网页链接](http://www.mob.com/#/downloadDetail/ShareSDK/ios)
   

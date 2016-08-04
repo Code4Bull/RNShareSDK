@@ -1,0 +1,54 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="60dp"
+            android:drawableLeft="@drawable/ic_launcher"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="ShareSDK"
+            android:textSize="48dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:text="@string/app_btn1" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:text="@string/app_btn2" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:text="@string/app_btn3" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:text="@string/app_btn4" />
+    </LinearLayout>
+
+</ScrollView>
