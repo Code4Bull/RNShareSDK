@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21ad8edd-de16-4687-86b5-ef5403b874db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/.idea/workspace.xml" afterPath="$PROJECT_DIR$/android/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/app/src/main/java/com/rnsharesdk/MainApplication.java" afterPath="$PROJECT_DIR$/android/app/src/main/java/com/rnsharesdk/MainApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.android.js" afterPath="$PROJECT_DIR$/index.android.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme4android.md" afterPath="$PROJECT_DIR$/readme4android.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.ios.js" afterPath="$PROJECT_DIR$/index.ios.js" />
     </list>
     <ignored path="RNShareSDK.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.ios.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.ios.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.ios.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="124" column="37" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
+            <state relative-caret-position="221">
+              <caret line="111" column="38" selection-start-line="111" selection-start-column="38" selection-end-line="113" selection-end-column="86" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#119#160#0" expanded="true" />
@@ -61,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.android.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.android.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.android.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="76" selection-end-column="36" />
+            <state relative-caret-position="629">
+              <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#119#160#0" expanded="true" />
@@ -78,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/readme4android.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,9 +101,9 @@
         <option value="$PROJECT_DIR$/android/AwesomeProject.iml" />
         <option value="$PROJECT_DIR$/ShareSDKIOS.js" />
         <option value="$PROJECT_DIR$/ShareSDK_config.js" />
-        <option value="$PROJECT_DIR$/index.ios.js" />
         <option value="$PROJECT_DIR$/ShareSDK.js" />
         <option value="$PROJECT_DIR$/index.android.js" />
+        <option value="$PROJECT_DIR$/index.ios.js" />
       </list>
     </option>
   </component>
@@ -277,12 +275,12 @@
       <workItem from="1469029171136" duration="145000" />
       <workItem from="1469080146054" duration="118000" />
       <workItem from="1469088336654" duration="113000" />
-      <workItem from="1470247135682" duration="7625000" />
+      <workItem from="1470247135682" duration="7866000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49999000" />
+    <option name="totallyTimeSpent" value="50240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1276" height="777" extended-state="0" />
@@ -582,7 +580,7 @@
     <entry file="file://$PROJECT_DIR$/readme4android.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -605,10 +603,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.ios.js">
+    <entry file="file://$PROJECT_DIR$/index.android.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="124" column="37" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
+        <state relative-caret-position="629">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#119#160#0" expanded="true" />
@@ -616,10 +614,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.android.js">
+    <entry file="file://$PROJECT_DIR$/index.ios.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="76" selection-end-column="36" />
+        <state relative-caret-position="221">
+          <caret line="111" column="38" selection-start-line="111" selection-start-column="38" selection-end-line="113" selection-end-column="86" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#119#160#0" expanded="true" />

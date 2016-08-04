@@ -1,6 +1,6 @@
 ## ShareSDK-iOS (v3.x) for React-Native 
 * JS 开发者方便的集成ShareSDK分享和授权功能。
-* ShareSDK for android 正在路上～
+* ShareSDK for android 集成文档 [网页链接](https://github.com/kengsir/RNShareSDK/blob/master/readme4android.md)
 
 ## 目录
 * Getting started
@@ -15,16 +15,17 @@
 
 ## <a id="Download"></a>1、新建项目并下载 ShareSDK
 * 1、React-Native 项目环境搭建，不会的童鞋自行面壁哈: [网页链接](http://reactnative.cn/docs/0.27/getting-started.html#content).
-* 2、ShareSDK iOS版本的 RN 插件是在ShareSDK iOS版本基础上对原生模块的接口做导出供给JS端使用，是依赖ShareSDK for iOS的。是依赖ShareSDK for iOS的。所以下载本示例DEMO就包含了以下2部分，下载下来的文件目录截图如下：
+* 2、ShareSDK iOS版本的 RN 插件是在ShareSDK iOS版本基础上对原生模块的接口做导出供给JS端使用，是依赖ShareSDK for iOS的。所以下载本示例DEMO就包含了以下2部分，下载下来的文件目录截图如下：
 
   （1）ShareSDK iOS 版本的下载：[网页链接](http://www.mob.com/#/downloadDetail/ShareSDK/ios)
   
   （2）React-Native 插件的下载: ：[网页链接](https://github.com/kengsir/RNShareSDK)
-（包含demo，需要的是ShareSDKManager.h / ShareSDKManager.m / ShareSDK.js[暂名]）
+（包含demo，需要的是ShareSDKManager.h / ShareSDKManager.m / ShareSDK.js）
 
-    ![初始化](http://ww2.sinaimg.cn/mw690/6f5f9fe7gw1f5ji9gh9f1j20w20l4acp.jpg)
+    ![初始化](http://ww4.sinaimg.cn/mw690/6f5f9fe7gw1f6hxre0f6oj20xo0l6juq.jpg)
 
 * 将以上文件ShareSDKManager.h / ShareSDKManager.m / ShareSDK 拖到新建的 RN 项目中的 ios 目录下，将 ShareSDK.js 拖入 RN 项目中。
+* 注意：Sources(导入文件）  就是集成所需要的所有文件
 
 
 ## <a id="init"></a> 2、初始化ShareSDK并设置社交平台
@@ -202,16 +203,9 @@ var shareParams = {
 * 2、调用分享方法,并设置回调：
 
   ```
- // 分享,传入需要分享的平台,已经构建好的分享参数
-           ShareSDK.share(ShareSDK.PlatformType.SinaWeibo,shareParams,(error,events)=>{
-                                       if (error){
-                                        console.error(error);
-                                       }else{
-                                         // 处理分享成功之后的操作
-                                         alert('分享成功');
-                                         console.log(events);
-                                       }
-                                  });}
+   // 分享,传入需要分享的平台,已经构建好的分享参数
+           ShareSDK.share(ShareSDK.platformType.SinaWeibo,shareParams)
+           ShareSDK.callBack();
  ```
 
 
@@ -219,18 +213,10 @@ var shareParams = {
 
 * 1、调用授权方法,并设置获取用户信息的回调
 
+  ```
+ // 平台授权
+ ShareSDK.authorize(ShareSDK.platformType.SinaWeibo),ShareSDK.callBack();
  ```
-      // 平台授权
-              ShareSDK.authorize(ShareSDK.PlatformType.SinaWeibo,(error,events)=>{
-                                       if (error){
-                                        console.error(error);
-                                       }else{
-                                         // 处理分享成功之后的操作
-                                         alert('授权成功');
-                                         console.log(events);
-                                       }
-                                  });}
-```
 
 
 ## <a id="SocialConfiguration"></a>各个分享平台参数配置描述

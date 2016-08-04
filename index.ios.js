@@ -91,7 +91,7 @@ class RNShareSDK extends Component {
 
            // 分享,传入需要分享的平台,已经构建好的分享参数
            ShareSDK.share(ShareSDK.platformType.SinaWeibo,shareParams)
-           ShareSDK.callBack(alert('分享成功'),null,alert('分享取消'))
+           ShareSDK.callBack();
            }
 
           } text="无UI分享"/>
