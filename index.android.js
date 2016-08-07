@@ -38,6 +38,11 @@ class CustomButton extends React.Component{
 
 
 class RNShareSDK extends Component {
+
+    // 在 react native 提供的方法componentWillMount中设置回调
+    componentWillMount() {
+        ShareSDK.callBack();
+    }
     
   render() {
     return (
@@ -47,8 +52,6 @@ class RNShareSDK extends Component {
                 var params = JSON.stringify(shareParams);
                 // 调用直接方法的方法
                 ShareSDK.share(ShareSDK.platformType.SinaWeibo, params);
-                // 设置回调
-                ShareSDK.callBack();
                 
                 }
           }text="无UI分享"/>
@@ -58,9 +61,7 @@ class RNShareSDK extends Component {
                 var params = JSON.stringify(shareParams);
                 // 调用弹出九宫格的方法,
                 ShareSDK.showShareActionSheet( 0, params );
-                // 设置回调
-                ShareSDK.callBack()
-
+             
                 }
 
           } text="弹出ActionSheet分享"/>
@@ -73,8 +74,7 @@ class RNShareSDK extends Component {
           <CustomButton onPress={ ()=>{
 
                 ShareSDK.authorize(ShareSDK.platformType.SinaWeibo);
-                //设置回调,接收返回信息
-                ShareSDK.callBack();
+            
                 }
 
           } text="授权"/>

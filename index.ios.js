@@ -84,6 +84,12 @@ class CustomButton extends React.Component{
 }
 
 class RNShareSDK extends Component {
+
+    // 在此方法中设置回调
+    componentWillMount() {
+        ShareSDK.callBack();
+    }
+
   render() {
     return (
         <View>
@@ -91,7 +97,7 @@ class RNShareSDK extends Component {
 
            // 分享,传入需要分享的平台,已经构建好的分享参数
            ShareSDK.share(ShareSDK.platformType.SinaWeibo,shareParams)
-           ShareSDK.callBack();
+
            }
 
           } text="无UI分享"/>
@@ -99,19 +105,20 @@ class RNShareSDK extends Component {
           <CustomButton onPress={()=>{
               // 弹出actionSheet进行分享
               ShareSDK.showShareActionSheet(activePlatforms,shareParams)
-              ShareSDK.callBack();
+
               }
 
           } text="弹出ActionSheet分享"/>
 
             <CustomButton onPress={()=>{
               // 弹出编辑框进行分享
-              ShareSDK.showShareEditor(ShareSDK.platformType.SinaWeibo,shareParam),ShareSDK.callBack()}
+              ShareSDK.showShareEditor(ShareSDK.platformType.SinaWeibo,shareParam)
+              }
           } text="弹出编辑框分享"/>
 
           <CustomButton onPress={()=>{
               // 平台授权
-              ShareSDK.authorize(ShareSDK.platformType.SinaWeibo),ShareSDK.callBack();
+              ShareSDK.authorize(ShareSDK.platformType.SinaWeibo)
               }
 
           } text="授权"/>

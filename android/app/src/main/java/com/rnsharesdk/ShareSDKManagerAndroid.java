@@ -1,5 +1,6 @@
 package com.rnsharesdk;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.View;
@@ -46,7 +47,7 @@ public class ShareSDKManagerAndroid extends ReactContextBaseJavaModule implement
     public ShareSDKManagerAndroid(ReactApplicationContext reactApplicationContext) {
         super(reactApplicationContext);
         context = reactApplicationContext;
-
+        ShareSDK.initSDK(context);
     }
 
     @Override
@@ -95,7 +96,6 @@ public class ShareSDKManagerAndroid extends ReactContextBaseJavaModule implement
         oks.setCustomerLogo(logo, label, listener);
         oks.show(context);
     }
-
 
 //    @ReactMethod
 //    public void initSDK(String appKey) {
@@ -304,12 +304,16 @@ public class ShareSDKManagerAndroid extends ReactContextBaseJavaModule implement
                 Platform plat = ShareSDK.getPlatform(context, pName);
                 plat.setPlatformActionListener(new ShareSDKPlatformListener(context));
                 plat.SSOSetting(disableSSO);
+
                 try {
                     Hashon hashon = new Hashon();
                     if (DEBUG) {
                         System.out.println("share content ==>>" + content);
                     }
                     HashMap<String, Object> data = hashon.fromJson(content);
+
+
+
                     ShareParams sp = new ShareParams(data);
                     //不同平台，分享不同内容
                     if (data.containsKey("customizeShareParams")) {

@@ -204,8 +204,12 @@ var shareParams = {
 
   ```
    // 分享,传入需要分享的平台,已经构建好的分享参数
-           ShareSDK.share(ShareSDK.platformType.SinaWeibo,shareParams)
-           ShareSDK.callBack();
+    ShareSDK.share(ShareSDK.platformType.SinaWeibo,shareParams)
+          
+   // 在 react native 提供的方法componentWillMount中设置回调
+    componentWillMount() {
+        ShareSDK.callBack();
+    }
  ```
 
 
@@ -215,7 +219,13 @@ var shareParams = {
 
   ```
  // 平台授权
- ShareSDK.authorize(ShareSDK.platformType.SinaWeibo),ShareSDK.callBack();
+ ShareSDK.authorize(ShareSDK.platformType.SinaWeibo)
+
+
+ // 在 react native 提供的方法componentWillMount中设置回调
+ componentWillMount() {
+      ShareSDK.callBack();
+ }
  ```
 
 

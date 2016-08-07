@@ -259,7 +259,7 @@ RCT_EXPORT_METHOD(authorize:(NSInteger)platformType)
 }
 
 #pragma mark 检查平台是否已经授权
-RCT_EXPORT_METHOD(isAuthValid:(NSInteger)platformType)
+RCT_EXPORT_METHOD(hasAuthorized:(NSInteger)platformType)
 {
   [ShareSDK hasAuthorized:platformType];
 }
