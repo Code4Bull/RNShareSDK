@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21ad8edd-de16-4687-86b5-ef5403b874db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/RNShareSDK.xcodeproj/project.xcworkspace/xcuserdata/kengsir.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/ios/RNShareSDK.xcodeproj/project.xcworkspace/xcuserdata/kengsir.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/ShareSDKManager.m" afterPath="$PROJECT_DIR$/ios/ShareSDKManager.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShareSDK.js" afterPath="$PROJECT_DIR$/ShareSDK.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/.idea/workspace.xml" afterPath="$PROJECT_DIR$/android/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/app/app.iml" afterPath="$PROJECT_DIR$/android/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/app/src/main/java/com/rnsharesdk/ShareSDKManagerAndroid.java" afterPath="$PROJECT_DIR$/android/app/src/main/java/com/rnsharesdk/ShareSDKManagerAndroid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.android.js" afterPath="$PROJECT_DIR$/index.android.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.ios.js" afterPath="$PROJECT_DIR$/index.ios.js" />
-    </list>
+    <list default="true" id="21ad8edd-de16-4687-86b5-ef5403b874db" name="Default" comment="" />
     <ignored path="RNShareSDK.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,8 +59,8 @@
       <file leaf-file-name="index.android.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.android.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="44" selection-end-column="5" />
+            <state relative-caret-position="85">
+              <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#119#160#0" expanded="true" />
@@ -299,12 +289,12 @@
       <workItem from="1470247135682" duration="8083000" />
       <workItem from="1470315182706" duration="394000" />
       <workItem from="1470543243058" duration="2162000" />
-      <workItem from="1470553372721" duration="157000" />
+      <workItem from="1470553372721" duration="330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53170000" />
+    <option name="totallyTimeSpent" value="53343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="151" y="23" width="1276" height="777" extended-state="0" />
@@ -747,8 +737,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.android.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="44" selection-end-column="5" />
+        <state relative-caret-position="85">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#119#160#0" expanded="true" />

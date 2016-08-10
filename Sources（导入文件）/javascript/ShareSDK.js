@@ -8,11 +8,9 @@ import {
 var ShareSDKManager = require('react-native').NativeModules.ShareSDKManager;
 // 导入android原生模块
 var ShareSDKManagerAndroid = require('react-native').NativeModules.ShareSDKManagerAndroid;
+// 导入iOS android的回调
+var { NativeEventEmitter , DeviceEventEmitter , NativeModules} = require('react-native');
 
-// 导入iOS回调
-
-// 导入android回调
-var { DeviceEventEmitter } = require('react-native');
 
 var ShareSDK = {
     
@@ -136,8 +134,25 @@ var ShareSDK = {
             ShareSDKManager.authorize(platformType);
         }else {
             // 执行android的操作
+            ShareSDKManagerAndroid.authorize(platformType);
         }
     },
+
+    // 检查平台是否已经授权
+    hasAuthorized(platformType){
+        if(Platform.OS === 'ios'){
+            // 执行iOS的操作
+            ShareSDKManager.hasAuthorized(platformType);
+        }else {
+            // 执行android的操作
+            ShareSDKManagerAndroid.isAuthValid(platformType);
+        }
+    },
+
+
+    // 检查是否案安装客户端
+    
+
 
     // 取消授权
     cancelAuthorize(platformType){
@@ -146,6 +161,7 @@ var ShareSDK = {
             ShareSDKManager.cancelAuthorize(platformType);
         }else {
             // 执行android的操作
+            ShareSDKManagerAndroid.removeAccount(platformType);
         }
     },
 
@@ -153,8 +169,10 @@ var ShareSDK = {
     getUserInfo(platformType){
         if(Platform.OS === 'ios'){
             // 执行iOS的操作
+            ShareSDKManager.getUserInfo(platformType);
         }else {
             // 执行android的操作
+            ShareSDKManagerAndroid.getAuthInfo(platformType);
         }
     },
 
@@ -162,21 +180,30 @@ var ShareSDK = {
     callBack(){
         if(Platform.OS === 'ios'){
             // 执行iOS的操作
+            var successListener = new NativeEventEmitter(NativeModules.ShareSDKManager)
+            successListener.addListener('success', (data) => console.log(data))
+
+            var failListener = new NativeEventEmitter(NativeModules.ShareSDKManager)
+            failListener.addListener('fail', (data) => console.log(data))
+
+            var cancelListener = new NativeEventEmitter(NativeModules.ShareSDKManager)
+            cancelListener.addListener('cancel', (data) => console.log(data))
 
         }else {
             // 执行android的操作
             var completeListener = DeviceEventEmitter.addListener('OnComplete',(e)=>{
-                console.log(e);
+                console.log(e)
             });
 
             var errorListener = DeviceEventEmitter.addListener('OnError',(e)=>{
-                console.log(e);
-            })
+                console.log(e)
+            });
 
             var cancelListener = DeviceEventEmitter.addListener('OnCancel',(e)=>{
-                console.log(e);
+                console.log(e)
             });
         }
+
     }
 }
 
