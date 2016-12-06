@@ -160,7 +160,7 @@ c、在 TotalPlatforms 对象中添加 ShareSDK 各个平台的初始化参数�
     	// QQ系列 QQ好友 QQ空间
     	 [ShareSDK.PlatformType.QQ] : {
         	app_id: '100371282',
-        	app_secret: 'aed9b0303e3ed1e27bae87c33761161d',
+        	app_key: 'aed9b0303e3ed1e27bae87c33761161d',
         	authType: ShareSDK.AuthType.Both
     	}
     // Facebook
