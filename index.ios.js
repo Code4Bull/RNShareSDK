@@ -5,16 +5,17 @@
  * http://www.mob.com kengsir
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View, TouchableHighlight
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View, TouchableHighlight
 } from 'react-native';
 
 // ------------------------------------------------------------------------------
-ShareSDK = require('./ShareSDK')
+import {ShareSDK} from './ShareSDK';
+
 // -----------------------------------------------------------------------------
 
 activePlatforms = [
@@ -27,21 +28,21 @@ activePlatforms = [
 // 设置各个平台初始化
 // platforms
 totalPlatforms = {
-    [ShareSDK.platformType.SinaWeibo] : {
-        app_key:'568898243',
-        app_secret:'38a4f8204cc784f81f9f0daaf31e02e3',
-        redirect_uri:'http://www.sharesdk.cn',
+    [ShareSDK.platformType.SinaWeibo]: {
+        app_key: '568898243',
+        app_secret: '38a4f8204cc784f81f9f0daaf31e02e3',
+        redirect_uri: 'http://www.sharesdk.cn',
         authType: ShareSDK.authType.Both
     },
 
-    [ShareSDK.platformType.TencentWeibo] : {
+    [ShareSDK.platformType.TencentWeibo]: {
         app_key: '801307650',
         app_secret: 'ae36f4ee3946e1cbb98d6965b0b2ff5c',
         redirect_uri: 'http://www.sharesdk.cn',
         authType: ShareSDK.authType.Both
     },
 
-    [ShareSDK.platformType.Wechat] : {
+    [ShareSDK.platformType.Wechat]: {
         app_id: 'wx4868b35061f87885',
         app_secret: '64020361b8ec4c99936c0e3999a9f249',
         authType: ShareSDK.authType.Both
@@ -73,10 +74,10 @@ shareParams = {
 
 
 // DEMO中的分享按钮
-class CustomButton extends React.Component{
+class CustomButton extends React.Component {
 
-    render(){
-        return(
+    render() {
+        return (
             <TouchableHighlight style={styles.button} underlayColor="#a5a5a5" onPress={this.props.onPress}>
                 <Text style={styles.buttonText}>{this.props.text}</Text>
             </TouchableHighlight>);
@@ -90,75 +91,80 @@ class RNShareSDK extends Component {
         ShareSDK.callBack();
     }
 
-  render() {
-    return (
-        <View>
-          <CustomButton onPress={()=>{
+    async _hasAuthorized() {
+        // 平台授权
+        try {
+            let b= await ShareSDK.hasAuthorized(ShareSDK.platformType.SinaWeibo);
 
-           // 分享,传入需要分享的平台,已经构建好的分享参数
-           ShareSDK.share(ShareSDK.platformType.SinaWeibo,shareParams)
+            console.log('b==', b);
+        } catch (e) {
+            console.error(e);
+        }
+    }
 
-           }
+    render() {
+        return (
+            <View>
+                <CustomButton onPress={()=> {
 
-          } text="无UI分享"/>
+                    // 分享,传入需要分享的平台,已经构建好的分享参数
+                    ShareSDK.share(ShareSDK.platformType.SinaWeibo, shareParams)
 
-          <CustomButton onPress={()=>{
-              // 弹出actionSheet进行分享
-              ShareSDK.showShareActionSheet(activePlatforms,shareParams)
+                }
 
-              }
+                } text="无UI分享"/>
 
-          } text="弹出ActionSheet分享"/>
+                <CustomButton onPress={()=> {
+                    // 弹出actionSheet进行分享
+                    ShareSDK.showShareActionSheet(activePlatforms, shareParams)
 
-            <CustomButton onPress={()=>{
-              // 弹出编辑框进行分享
-              ShareSDK.showShareEditor(ShareSDK.platformType.SinaWeibo,shareParam)
-              }
-          } text="弹出编辑框分享"/>
+                }
 
-          <CustomButton onPress={()=>{
-              // 平台授权
-              ShareSDK.authorize(ShareSDK.platformType.SinaWeibo)
-              }
+                } text="弹出ActionSheet分享"/>
 
-          } text="授权"/>
+                <CustomButton onPress={()=> {
+                    // 弹出编辑框进行分享
+                    ShareSDK.showShareEditor(ShareSDK.platformType.SinaWeibo, shareParam)
+                }
+                } text="弹出编辑框分享"/>
 
-            <CustomButton onPress={()=>{
-              // 平台授权
-              if(ShareSDK.hasAuthorized(ShareSDK.platformType.SinaWeibo)){
-                   console.log("已经授权");}
-              else{
+                <CustomButton onPress={()=> {
+                    // 平台授权
+                    ShareSDK.authorize(ShareSDK.platformType.SinaWeibo)
+                }
 
-                    console.log("还未授权");
-                  }
-           }
-          } text="检查平台是否已经授权"/>
+                } text="授权"/>
+
+                <CustomButton onPress={
+                    this._hasAuthorized
+                } text={"检查平台是否已经授权" }/>
 
 
-            <CustomButton onPress={()=>{
-              ShareSDK.cancelAuthorize(ShareSDK.platformType.SinaWeibo);
-              alert("平台取消授权成功")}
+                <CustomButton onPress={()=> {
+                    ShareSDK.cancelAuthorize(ShareSDK.platformType.SinaWeibo);
+                    alert("平台取消授权成功")
+                }
 
-          } text="取消授权"/>
+                } text="取消授权"/>
 
-        </View>
-    );
-  }
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  button : {
-    margin:5,
-    backgroundColor:'green',
-    padding:15,
-    borderBottomWidth:StyleSheet.hairlineWidth,
-    borderBottomColor:'#cdcdcd'
-  },
+    button: {
+        margin: 5,
+        backgroundColor: 'green',
+        padding: 15,
+        borderBottomWidth: StyleSheet.hairlineWidth,
+        borderBottomColor: '#cdcdcd'
+    },
 
-  buttonText: {
-    margin:5,
-    flex:1
-  },
+    buttonText: {
+        margin: 5,
+        flex: 1
+    },
 
 });
 
